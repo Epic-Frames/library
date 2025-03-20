@@ -1,0 +1,122 @@
+{
+    "levels": {
+        "1": [
+            {
+                "id": 1,
+                "type": "Spider",
+                "num1": 32,
+                "num2": 500,
+                "init_x": 200,
+                "init_y": 624,
+                "width": 71.25,
+                "height": 48,
+                "speed": 3,
+                "health": 2,
+                "src_img": "Assets/spider.png",
+                "dir": 1
+            }
+        ],
+        "2": [
+            {
+                "id": 1,
+                "type": "Spider",
+                "num1": 256,
+                "num2": 540,
+                "init_x": 256,
+                "init_y": 624,
+                "width": 71.25,
+                "height": 48,
+                "speed": 4,
+                "health": 2,
+                "src_img": "Assets/spider.png",
+                "dir": 1
+            }
+        ],
+        "3": [
+            {
+                "id": 1,
+                "type": "Lava Bubbles",
+                "num1": 544,
+                "num2": 643.25,
+                "init_x": 600,
+                "init_y": 643.25,
+                "width": 27.375,
+                "height": 28.75,
+                "speed": 1,
+                "health": 2,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            },
+            {
+                "id": 2,
+                "type": "Lava Bubbles",
+                "num1": 544,
+                "num2": 643.25,
+                "init_x": 720,
+                "init_y": 643.25,
+                "width": 27.375,
+                "height": 28.75,
+                "speed": 1,
+                "health": 2,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            },
+            {
+                "id": 3,
+                "type": "Lava Bubbles",
+                "num1": 544,
+                "num2": 643.25,
+                "init_x": 880,
+                "init_y": 643.25,
+                "width": 27.375,
+                "height": 28.75,
+                "speed": 1,
+                "health": 2,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            },
+            {
+                "id": 4,
+                "type": "Lava Bubbles",
+                "num1": 544,
+                "num2": 643.25,
+                "init_x": 1040,
+                "init_y": 643.25,
+                "width": 27.375,
+                "height": 28.75,
+                "speed": 1,
+                "health": 2,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            },
+            {
+                "id": 5,
+                "type": "Lava Bubbles",
+                "num1": 544,
+                "num2": 643.25,
+                "init_x": 1180,
+                "init_y": 643.25,
+                "width": 27.375,
+                "height": 28.75,
+                "speed": 1,
+                "health": 2,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            },
+            {
+                "id": 6,
+                "type": "Watcher",
+                "num1": 0,
+                "num2": 100,
+                "init_x": 100,
+                "init_y": 100,
+                "width": 100,
+                "height": 100,
+                "speed": 2,
+                "health": 5,
+                "src_img": "Assets/lava_creature.png",
+                "dir": -1
+            }
+        ]
+    }
+}

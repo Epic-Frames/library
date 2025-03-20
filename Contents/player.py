@@ -21,6 +21,8 @@ class Player():
         self.jumping = False
         self.on_ground = True
 
+        self.freezeFrame = 0
+
         if y is None:
             self.y = footY - self.height
             self.footY = footY
@@ -107,10 +109,18 @@ class Player():
         return collided, ifDead, ifWin
     
 
-    def move(self, tileList):
+    def move(self, tileList, freeze=False):
         collided, ifDead, ifWin = self.collision(tileList)
         if not collided:
             self.on_ground = False
+
+        if freeze or self.freezeFrame > 0:
+            self.xChange = 0
+            self.yChange = 0
+            if freeze:
+                self.freezeFrame = 50
+            else:
+                self.freezeFrame -= 1
 
         if self.xChange != 0:
             self.x += self.xChange

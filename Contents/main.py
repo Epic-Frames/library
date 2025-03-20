@@ -1,6 +1,7 @@
 import pygame as pg
 import sys
 import json
+import random
 from enemy import Enemy
 from text import Text
 from player import Player
@@ -42,7 +43,7 @@ for i in range(levelCount):
         sys.exit()
 
 currentPage = "start_animation"
-currentLevel = 1
+currentLevel = 3
 level = levels[currentLevel]
 
 FPS = 30
@@ -126,17 +127,23 @@ def game():
                 player.on_ground = False
 
         # Move characters
-        ifDead, ifWin = player.move(world.tileList)
+        ifFreeze = False
         for enemy in enemies:
-            enemy.move()
+            if enemy.move():
+                ifFreeze = True
 
-        world.draw_map(SCREEN)
+        if ifFreeze:
+            ifDead, ifWin = player.move(world.tileList, freeze=True)
+        else:
+            ifDead, ifWin = player.move(world.tileList, freeze=False)
+        
 
         # Detect collision
         if player.check_collision(enemies):
             ifDead = True
 
         # Display character
+        world.draw_map(SCREEN)
         player.draw(SCREEN)
         for enemy in enemies:
             enemy.draw(SCREEN)
@@ -146,11 +153,12 @@ def game():
                 if currentLevel < levelCount:
                     currentLevel += 1
                     level = levels[currentLevel]
+                    player.x = 100
+                    player.y = 574
                     return "game"
                 currentLevel = 1
                 level = levels[currentLevel]
                 return "win_screen"
-
             else: 
                 return "game_over"
 
