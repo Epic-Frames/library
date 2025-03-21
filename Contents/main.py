@@ -1,7 +1,6 @@
 import pygame as pg
 import sys
 import json
-import random
 from enemy import Enemy
 from text import Text
 from player import Player
@@ -26,6 +25,9 @@ startupFont = pg.font.Font(None, 56)
 background = pg.image.load("Assets/bg.png")
 background = pg.transform.scale(background, (SCREEN_X, SCREEN_Y))
 
+freeze_bg = pg.image.load("Assets/freeze_bg.png")
+freeze_bg = pg.transform.scale(freeze_bg, (SCREEN_X, SCREEN_Y))
+
 levelCount = 3
 
 mode = ""
@@ -43,7 +45,7 @@ for i in range(levelCount):
         sys.exit()
 
 currentPage = "start_animation"
-currentLevel = 3
+currentLevel = 1
 level = levels[currentLevel]
 
 FPS = 30
@@ -118,7 +120,11 @@ def game():
                 if event.key == pg.K_w:
                     currentLevel += 1
                     return "game"
-        SCREEN.blit(background, (0, 0))
+        
+        if player.freezeFrame > 0:
+            SCREEN.blit(freeze_bg, (0, 0))
+        else:
+            SCREEN.blit(background, (0, 0))
 
         if mode == "Jump":
             if player.on_ground:

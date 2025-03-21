@@ -14,6 +14,20 @@
                 "health": 2,
                 "src_img": "Assets/spider.png",
                 "dir": 1
+            },
+            {
+                "id": 2,
+                "type": "Spider",
+                "num1": 224,
+                "num2": 568.75,
+                "init_x": 224,
+                "init_y": 464,
+                "width": 71.25,
+                "height": 48,
+                "speed": 3,
+                "health": 2,
+                "src_img": "Assets/spider.png",
+                "dir": 1
             }
         ],
         "2": [
@@ -26,7 +40,7 @@
                 "init_y": 624,
                 "width": 71.25,
                 "height": 48,
-                "speed": 4,
+                "speed": 8,
                 "health": 2,
                 "src_img": "Assets/spider.png",
                 "dir": 1
